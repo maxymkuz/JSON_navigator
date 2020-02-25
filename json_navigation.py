@@ -61,7 +61,9 @@ def return_back(data, used_keys):
 
 
 def main(data, temp_data, used_keys):
-    # print(used_keys, temp_data)
+    """(list/dict, dict, list)
+    Main navigation through file
+    """
     print("\nCurrently your depth is:", len(used_keys))
 
     if isinstance(temp_data, list):
@@ -90,11 +92,15 @@ def main(data, temp_data, used_keys):
 
 
 def welcome():
+    """
+    Main func in this module
+    """
     with open("account.json") as json_file:
         data = json.load(json_file)
     print("Welcome! This module will help you navigate through any JSON")
     print("file  in a simple way. Just follow the instructions:\n")
     main(data, copy.deepcopy(data), [])
+
 
 if __name__ == '__main__':
     welcome()
